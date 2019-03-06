@@ -26,10 +26,10 @@
             <!-- Top Menu Items -->
 
             <ul class="nav navbar-right top-nav">
-                <ul class="nav navbar-nav top-nav">
+                {{--<ul class="nav navbar-nav top-nav">--}}
                     {{--<li><a href="#">Payroll Management System (PMS)</a></li>--}}
-                    <li><a href="#">Payroll Management System (PMS)</a></li>
-                </ul>s
+                    {{--<li><a href="#" class="t">Payroll Management System (PMS)</a></li>--}}
+                {{--</ul>--}}
                 <li><a href="#" data-placement="bottom" data-toggle="tooltip" href="#" data-original-title="Stats"><i
                                 class="fa fa-bar-chart-o"></i>
                     </a>
@@ -105,8 +105,17 @@
                     </li>
                     <li>
                         <a href="#" data-toggle="collapse" data-target="#submenu-5"><i class="fas fa-clipboard-list"></i>
-                            Noticeboard <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                            Allowance <i class="fa fa-fw fa-angle-down pull-right"></i></a>
                         <ul id="submenu-5" class="collapse">
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.1</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.2</a></li>
+                            <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.3</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" data-toggle="collapse" data-target="#submenu-8"><i class="fas fa-clipboard-list"></i>
+                            Reports <i class="fa fa-fw fa-angle-down pull-right"></i></a>
+                        <ul id="submenu-8" class="collapse">
                             <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.1</a></li>
                             <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.2</a></li>
                             <li><a href="#"><i class="fa fa-angle-double-right"></i> SUBMENU 2.3</a></li>
@@ -138,7 +147,8 @@
                 <!-- Page Heading -->
                 <div class="row" id="main">
                     <div class="col-sm-12 col-md-12 well" id="content">
-                        <h1>Welcome Admin!  {{ Auth::user()->id }}</h1>
+                        {{--{{ Auth::user()->id }}--}}
+                        <h2>Payroll Management System (PMS)  </h2>
                     </div>
                 </div>
                 <!-- /.row -->

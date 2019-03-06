@@ -63,9 +63,19 @@ a:link {
 }
 
 /* Top Navigation */
+.navbar-header {
+    background-color:#428bca;
+
+}
+
+.navbar-fixed-top {
+    background-color:#428bca;
+
+}
 
 .top-nav {
     padding: 0 15px;
+    background-color:#428bca;
 }
 
 .top-nav > li {
@@ -73,10 +83,23 @@ a:link {
     float: left;
 }
 
+.t > ul > a:active {
+    font-size: 10px;
+    font-weight: normal;
+    color: white;
+}
+
+.t > ul > a:link {
+    font-size: 10px;
+    font-weight: normal;
+    color: white;
+}
+
 .top-nav > li > a {
     padding-top: 20px;
     padding-bottom: 20px;
     line-height: 20px;
+    background-color:#428bca;
     color: #fff;
 }
 
@@ -116,9 +139,11 @@ a:link {
         margin-left: -225px;
         border: none;
         border-radius: 0;
-        border-top: 1px rgba(0, 0, 0, .5) solid;
+        border-top: 1px rgba(255, 255, 255, 0.31) solid;
         overflow-y: auto;
-        background-color: #222;
+        background-color:#428bca;
+        color: white;
+        -webkit-text-fill-color: white;
         /*background-color: #5A6B7D;*/
         bottom: 0;
         overflow-x: hidden;
@@ -139,7 +164,7 @@ a:link {
 
 .side-nav > li > ul {
     padding: 0;
-    border-bottom: 1px rgba(0, 0, 0, .3) solid;
+    border-bottom: 1px rgba(255, 255, 255, 0.3) solid;
 }
 
 .side-nav > li > ul > li > a {
