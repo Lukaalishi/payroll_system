@@ -23,6 +23,9 @@ class LoginController extends Controller
     */
 
     use AuthenticatesUsers;
+    use AuthenticatesUsers {
+        logout as performLogout;
+    }
 
     /**
      * Where to redirect users after login.
@@ -76,11 +79,22 @@ class LoginController extends Controller
             return redirect()->intended('/auth/create');
         }
     }
-//    public function logout(Request $request)
+
+//    public function getLogout()
 //    {
-//       $request->session()->forget('userid');
-//       return redirect()->intended('');
+//        $this->auth->logout();
+//        Session::flush();
+//        return redirect('/auth/index');
 //    }
+    public function logout(Request $request)
+    {
+        $this->performLogout($request);
+        $this->guard()->logout();
+        $request->session()->invalidate();
+        $request->session()->flush();
+        $request->session()->regenerate();
+        return redirect()->route('users.index');
+    }
 
 
 }

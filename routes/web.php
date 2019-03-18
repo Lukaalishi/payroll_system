@@ -11,9 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
 
 //loading login page............................
 Route::get('/authenticate', function () {
@@ -23,22 +23,29 @@ Route::get('/authenticate', function () {
 });
 
 //loading users page............................
-//Route::get('/dashboard/users', function () {
+//Route::get('/dashboard/employee', function () {
 //
-//    return view('dashboard/users/index');
+//    return view('dashboard/employee/index');
 //    //return 'Hello world !!!';
 //});
 
 //route by using controller.........................................
-//Route::get('/dashboard/login', 'login_controller@login');
+//Route::get('/dashboard/employee', 'employees_controller@index');
 
 
 //register user account ...............................
 Route::resource('users', 'create_user_controller');
+
+
+
 //user authentication..................................
 $this->get('/login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('login', 'Auth\LoginController@authenticate');
-//$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+$this->post('logout', 'Auth\LoginController@logout')->name('logout');
+//Route::post('logout', function (){
+//    Auth::logout();
+//    return redirect()->route('users.index');
+//});
 Auth::routes();
 /* user routes*/
 Route::group(['middleware' => ['auth']], function () {
@@ -51,6 +58,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     //main_controller for dashboard ................
     Route::get('/dashboard/main/', 'maincontroller@index')->name('main_home');
+
+    //employeeeee controller
+    Route::resource('employees', 'employees_controller');
+
 
 
 });
